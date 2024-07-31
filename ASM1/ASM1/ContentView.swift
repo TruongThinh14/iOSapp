@@ -5,27 +5,10 @@
 //  Created by Thinh Nguyen Duong Truong on 31/7/24.
 //
 
+
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
-
-#Preview {
-    ContentView()
-}
-
-import SwiftUI
-
-struct WelcomeView: View {
     @State private var showInfoView = false
     
     var body: some View {
@@ -44,6 +27,7 @@ struct WelcomeView: View {
                 .padding()
             
             Button(action: {
+                
                 // Action to navigate to the navigation list view
             }) {
                 Text("Get Started")
@@ -75,13 +59,13 @@ struct InfoView: View {
             Text("App Author")
                 .font(.title)
             
-            Text("Name: Your Name")
+            Text("Name: Thinh Nguyen")
                 .font(.body)
             
-            Text("Student ID: Your Student ID")
+            Text("Student ID: 3914412")
                 .font(.body)
             
-            Text("Program: Your Program")
+            Text("Program: iOS Development")
                 .font(.body)
         }
         .padding()
@@ -90,6 +74,7 @@ struct InfoView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        ContentView()
     }
 }
+
