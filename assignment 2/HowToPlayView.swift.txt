@@ -1,0 +1,29 @@
+import SwiftUI
+
+struct HowToPlayView: View {
+    var body: some View {
+        TabView {
+            Text("Step 1: Explanation Here")
+                .tabItem {
+                    Text("Step 1")
+                }
+            Text("Step 2: Explanation Here")
+                .tabItem {
+                    Text("Step 2")
+                }
+        }
+        .tabViewStyle(PageTabViewStyle())
+        .onAppear {
+            SoundManager.shared.playBackgroundMusic("tutorial_music.mp3")
+        }
+        .onDisappear {
+            SoundManager.shared.stopBackgroundMusic()
+        }
+    }
+}
+
+struct HowToPlayView_Previews: PreviewProvider {
+    static var previews: some View {
+        HowToPlayView()
+    }
+}

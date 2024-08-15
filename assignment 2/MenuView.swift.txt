@@ -1,0 +1,30 @@
+import SwiftUI
+
+struct MenuView: View {
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 20) {
+                Text("Welcome to the Game!")
+                    .font(.largeTitle)
+                NavigationLink("Play Game", destination: GameView())
+                NavigationLink("Leaderboard", destination: LeaderboardView())
+                NavigationLink("How To Play", destination: HowToPlayView())
+                NavigationLink("Settings", destination: GameSettingsView())
+            }
+            .onAppear {
+                // Play background music
+                SoundManager.shared.playBackgroundMusic("menu_music.mp3")
+            }
+            .onDisappear {
+                // Stop background music
+                SoundManager.shared.stopBackgroundMusic()
+            }
+        }
+    }
+}
+
+struct MenuView_Previews: PreviewProvider {
+    static var previews: some View {
+        MenuView()
+    }
+}

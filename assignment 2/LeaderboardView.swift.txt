@@ -1,0 +1,33 @@
+import SwiftUI
+
+struct LeaderboardView: View {
+    var body: some View {
+        VStack {
+            List {
+                Text("Leaderboard Content Here")
+                // Example of player data
+                HStack {
+                    Text("Player1")
+                    Spacer()
+                    Text("1000")
+                    Image(systemName: "star.fill")
+                }
+            }
+            // Placeholder for charts
+            Text("Graphical Stats Here")
+                .padding()
+        }
+        .onAppear {
+            SoundManager.shared.playBackgroundMusic("leaderboard_music.mp3")
+        }
+        .onDisappear {
+            SoundManager.shared.stopBackgroundMusic()
+        }
+    }
+}
+
+struct LeaderboardView_Previews: PreviewProvider {
+    static var previews: some View {
+        LeaderboardView()
+    }
+}

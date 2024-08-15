@@ -1,0 +1,13 @@
+import Foundation
+import AVFoundation
+
+class SoundManager {
+    static let shared = SoundManager()
+    var audioPlayer: AVAudioPlayer?
+
+    func playBackgroundMusic(_ filename: String) {
+        if let url = Bundle.main.url(forResource: filename, withExtension: nil) {
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.numberOfLoops = -1 // loop indefinitely
+                audioPlayer

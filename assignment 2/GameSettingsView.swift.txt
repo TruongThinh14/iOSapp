@@ -1,0 +1,40 @@
+import SwiftUI
+
+struct GameSettingsView: View {
+    @State private var selectedDifficulty = "Medium"
+    @State private var selectedTheme = "Classic"
+    @State private var selectedLanguage = "English"
+    
+    var body: some View {
+        Form {
+            Section(header: Text("Difficulty")) {
+                Picker("Difficulty", selection: $selectedDifficulty) {
+                    Text("Easy").tag("Easy")
+                    Text("Medium").tag("Medium")
+                    Text("Hard").tag("Hard")
+                }
+                .pickerStyle(SegmentedPickerStyle())
+            }
+            Section(header: Text("Theme")) {
+                Picker("Theme", selection: $selectedTheme) {
+                    Text("Classic").tag("Classic")
+                    Text("Dark").tag("Dark")
+                    Text("Light").tag("Light")
+                }
+            }
+            Section(header: Text("Language")) {
+                Picker("Language", selection: $selectedLanguage) {
+                    Text("English").tag("English")
+                    Text("Vietnamese").tag("Vietnamese")
+                    Text("Korean").tag("Korean")
+                }
+            }
+        }
+    }
+}
+
+struct GameSettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        GameSettingsView()
+    }
+}
